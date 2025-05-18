@@ -1,17 +1,27 @@
-import { makeAutoObservable } from 'mobx';
-
-export interface Todo {
-  id: number;
-  title: string;
-  done: boolean;
-}
+import { makeAutoObservable, runInAction } from 'mobx';
+import * as api from '../api/todoApi';
 
 export class TodoStore {
-  todos: Todo[] = [];
+  todos: api.TodoDto[] = [];
+  loading = false;
+  error: string | null = null;
   nextId = 1;
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  async loadTodos() {
+    this.loading = true;
+    this.error = null;
+    try {
+      const data = await api.fetchTodos();
+      runInAction(() => (this.todos = data));
+    } catch {
+      runInAction(() => (this.error = 'Error loading tasks'));
+    } finally {
+      runInAction(() => (this.loading = false));
+    }
   }
 
   addTodo(title: string) {
