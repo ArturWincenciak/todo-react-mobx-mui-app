@@ -1,4 +1,6 @@
-# 🧠 TODO App z React 18 + TypeScript + MobX + MUI 5 + Axios
+# Interaktywny tutorial, z którym możesz rozmawiać
+## Zamiast czytać blogpost, który tylko częściowo odpowiada na Twoje potrzeby i wprowadza Cię w dziesiątki problemów, których nie musisz teraz rozwiązywać — stwórz swój własny tutorial, z którym możesz rozmawiać i dyskutować o podejmowanych decyzjach.
+### TODO App z React 18 + TypeScript + MobX + MUI 5 + Axios
 
 **Projekt ten powstał dla backend developera z .NET, w wyniku rozmowy z ChatGPT.**
 
