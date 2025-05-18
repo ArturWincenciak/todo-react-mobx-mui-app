@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NFsiEzbK0Qo=",
+  "success": true,
+  "projectFilePath": "/Users/arturwincenciak/git/todo-react-mobx-mui-app/backend/TodoApi/TodoApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/arturwincenciak/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "/Users/arturwincenciak/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
