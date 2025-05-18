@@ -54,7 +54,7 @@ I możesz z nimi **rozmawiać** – a nie tylko je czytać.
 
 ---
 
-## 📚 Dalej (jako totalne streszczenie)
+## 📚 Streszczenie
 
 * stack technologiczny,
 * strukturę projektu,
