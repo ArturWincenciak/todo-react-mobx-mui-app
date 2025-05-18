@@ -1,54 +1,59 @@
-# React + TypeScript + Vite
+# ToDo Lista - Interaktywne uczenie się z AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## O projekcie
+ToDo Lista to aplikacja do zarządzania zadaniami, która powstała jako efekt eksperymentu z nowym podejściem do nauki programowania - interaktywnego dialogu z AI. W przeciwieństwie do tradycyjnych tutoriali, cały proces tworzenia aplikacji odbywał się poprzez bezpośrednią rozmowę z ChatGPT, który dostosowywał przekazywaną wiedzę dokładnie do moich potrzeb.
 
-Currently, two official plugins are available:
+## Koncepcja "Interaktywnego tutoriala"
+Zamiast śledzić generyczne blogi i tutoriale, które często poruszają tematy nieistotne dla konkretnych potrzeb, zdecydowałem się na stworzenie "własnego tutoriala na żądanie" poprzez dialog z AI:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> "Interaktywny tutorial, z którym możesz rozmawiać. Zamiast czytać blogpost, który tylko częściowo odpowiada na Twoje potrzeby i wprowadza Cię w dziesiątki problemów, których nie musisz teraz rozwiązywać — stwórz swój własny tutorial, z którym możesz rozmawiać i dyskutować o podejmowanych decyzjach."
 
-## Expanding the ESLint configuration
+Korzyści takiego podejścia:
+- Uczysz się dokładnie tego, czego potrzebujesz, bez zbędnych dygresji
+- Możesz zadawać pytania w czasie rzeczywistym i natychmiast otrzymywać odpowiedzi
+- Materiał jest dostosowany dokładnie do wersji bibliotek i narzędzi, których używasz
+- Możesz dyskutować o alternatywnych rozwiązaniach i zrozumieć konsekwencje różnych decyzji architektonicznych
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+> "Zamiast tego siadasz i sam generujesz swój tutorial na podstawie rozmowy z AI, który w punkt, totalnie co do numerka wersji pakietów które używasz i frameworków, generuje ci tutoriał i prowadzi cię przez wszystkie szczegóły. Możesz sobie z nim porozmawiać, dopytując dlaczego taką a nie inną decyzję podjął i w czym ona się wiąże. Każde najgłupsze pytanie jakie chcesz zadać, to mu zadajesz i on ci odpowiada."
+>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technologie
+Aplikacja została zbudowana w oparciu o:
+- **Frontend:**
+    - React 18.2.0
+    - TypeScript 5.8.3
+    - Vite 6.3.5
+    - MobX 6.13.7
+    - Material UI 5.17.1
+    - Axios 1.9.0
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Narzędzia deweloperskie:**
+    - ESLint 9.27.0
+    - Prettier 3.5.3
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Funkcjonalności
+- Dodawanie nowych zadań
+- Oznaczanie zadań jako ukończone
+- Usuwanie zadań
+- Automatyczna synchronizacja z API
+- Responsywny interfejs użytkownika
+
+## Refleksje z procesu nauki
+Tworzenie aplikacji w dialogu z AI okazało się wyjątkowo efektywnym sposobem nauki:
+
+> "Myślę, że to jest o wiele lepszy i bardziej efektywny sposób uczenia się - możesz sam sobie szyć taki kurs czy blogpost na miarę dla siebie i z nim rozmawiać."
+>
+
+Zamiast sztywno określonego kursu, który zawsze w jakimś stopniu nie odpowiada indywidualnym potrzebom, interaktywne podejście pozwala na tworzenie w pełni spersonalizowanej ścieżki edukacyjnej.
+
+## Dalszy rozwój
+Ten projekt stanowi zarówno przykład aplikacji React/TypeScript, jak i demonstrację koncepcji interaktywnego uczenia się. W przyszłości aplikacja może zostać rozszerzona o:
+- System rejestracji i logowania
+- Kategoryzację zadań
+- Przypomnienia i terminy
+- Współdzielenie list zadań
+
+## Licencja
+Projekt dostępny na licencji MIT.
+
