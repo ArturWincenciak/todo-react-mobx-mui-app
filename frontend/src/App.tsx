@@ -1,22 +1,18 @@
 import './App.css';
 import { observer } from 'mobx-react-lite';
-import { Box, CircularProgress, Container, Typography } from '@mui/material';
+import { Alert, Box, CircularProgress, Container, Typography } from '@mui/material';
 import AddTodoFrom from './components/AddTodoFrom.tsx';
 import TodoList from './components/TodoList.tsx';
 import { todoStore } from './stores/TodoStore.ts';
-import {useEffect} from "react";
+import { useEffect } from 'react';
 
 const App = observer(() => {
   useEffect(() => {
     const load = async () => {
-      try {
-        await todoStore.loadTodos();
-      } catch (err) {
-        console.error('Error loading tasks', err);
-      }
+      await todoStore.loadTodos();
     };
 
-    load().then(r => console.log("Done loading tasks", r));
+    load();
   }, []);
 
   return (
@@ -26,6 +22,11 @@ const App = observer(() => {
           TO-DO List
         </Typography>
         <AddTodoFrom />
+        {todoStore.error && (
+          <Box mt={2}>
+            <Alert severity="error">{todoStore.error}</Alert>
+          </Box>
+        )}
         {todoStore.loading ? <CircularProgress sx={{ mt: 2 }} /> : <TodoList />}
       </Box>
     </Container>
