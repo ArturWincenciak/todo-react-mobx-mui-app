@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using TodoApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,13 @@ var todos = new List<Todo>
     new() { Id = 3, Title = "Buy bread", Done = false }
 };
 
-app.MapGet("/todos", () => todos);
+app.MapGet("/api/todos", () => todos);
+
+app.MapPost("/api/todos", ([FromBody] Todo newTodo) =>
+{
+    newTodo.Id = todos.Any() ? todos.Max(t => t.Id) + 1 : 1;
+    todos.Add(newTodo);
+    return Results.Ok(newTodo);
+});
 
 app.Run();
