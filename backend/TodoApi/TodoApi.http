@@ -3,7 +3,6 @@
 ###
 
 GET {{Host}}/api/todos
-Accept: application/json
 
 ###
 
@@ -15,5 +14,9 @@ Content-Type: application/json; charset=utf-8
     "title": "Test",
     "done": false
 }
+
+###
+
+PATCH {{Host}}/api/todos/1/toggle
 
 ###

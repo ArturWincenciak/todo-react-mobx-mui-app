@@ -29,4 +29,14 @@ app.MapPost("/api/todos", ([FromBody] Todo newTodo) =>
     return Results.Ok(newTodo);
 });
 
+app.MapPatch("/api/todos/{id:int}/toggle", (int id) =>
+{
+    var todo = todos.FirstOrDefault(t => t.Id == id);
+    if (todo is null)
+        return Results.NotFound();
+    
+    todo.Done = !todo.Done;
+    return Results.Ok(todo);
+});
+
 app.Run();
