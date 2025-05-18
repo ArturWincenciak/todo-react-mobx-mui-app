@@ -33,3 +33,5 @@ export class TodoStore {
     this.todos = this.todos.filter((t) => t.id != id);
   }
 }
+
+export const todoStore = new TodoStore();
