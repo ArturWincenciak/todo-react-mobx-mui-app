@@ -14,6 +14,12 @@ const API = axios.create({
 });
 
 export const fetchTodos = async () => {
-  const reset = await API.get<TodoDto[]>('/');
-  return reset.data;
+  const response = await API.get<TodoDto[]>('/');
+  return response.data;
+};
+
+export const addTodo = async (title: string) => {
+  const newTodo = { id: 0, title, done: false };
+  const response = await API.post<TodoDto>('/', newTodo);
+  return response.data;
 };

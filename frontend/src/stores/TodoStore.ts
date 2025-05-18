@@ -24,12 +24,17 @@ export class TodoStore {
     }
   }
 
-  addTodo(title: string) {
-    this.todos.push({
-      id: this.nextId++,
-      title,
-      done: false,
-    });
+  async addTodo(title: string) {
+    this.loading = true;
+    this.error = null;
+    try {
+      const newTodo = await api.addTodo(title);
+      runInAction(() => this.todos.push(newTodo));
+    } catch {
+      runInAction(() => (this.error = 'Error adding task'));
+    } finally {
+      runInAction(() => (this.loading = false));
+    }
   }
 
   toggleTodo(id: number) {
