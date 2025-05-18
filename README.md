@@ -20,7 +20,7 @@ To pozwoliło mi **skupić się na architekturze, składni i podejmowanych decyz
 
 ---
 
-### 🧠 Jak wyglądała współpraca?
+### Jak wyglądała współpraca?
 
 Po otrzymaniu pierwszych wskazówek, które wdrożyłem krok po kroku (i przy których oczywiście pojawiały się błędy i problemy), **mogłem na bieżąco dopytywać o każdy szczegół.**
 
