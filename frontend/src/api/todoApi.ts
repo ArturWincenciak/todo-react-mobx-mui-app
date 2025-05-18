@@ -7,9 +7,9 @@ export interface TodoDto {
 }
 
 const API = axios.create({
-  baseURL: "http://localhost:5128/api/todos",
+  baseURL: 'http://localhost:5128/api/todos',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   },
 });
 

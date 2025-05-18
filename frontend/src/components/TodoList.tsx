@@ -1,7 +1,7 @@
-import {observer} from "mobx-react-lite";
-import {Checkbox, IconButton, List, ListItem, ListItemText} from "@mui/material";
+import { observer } from 'mobx-react-lite';
+import { Checkbox, IconButton, List, ListItem, ListItemText } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {todoStore} from "../stores/TodoStore.ts";
+import { todoStore } from '../stores/TodoStore.ts';
 
 const TodoList = observer(() => {
   return (
