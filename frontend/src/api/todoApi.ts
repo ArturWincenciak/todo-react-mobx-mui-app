@@ -23,3 +23,8 @@ export const addTodo = async (title: string) => {
   const response = await API.post<TodoDto>('/', newTodo);
   return response.data;
 };
+
+export const toggleTodo = async (id: number) => {
+  const response = await API.patch<TodoDto>(`/${id}/toggle`);
+  return response.data;
+};

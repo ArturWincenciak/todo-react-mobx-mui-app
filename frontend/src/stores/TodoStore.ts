@@ -37,10 +37,23 @@ export class TodoStore {
     }
   }
 
-  toggleTodo(id: number) {
-    const todo = this.todos.find((t) => t.id == id);
-    if (todo) {
-      todo.done = !todo.done;
+  async toggleTodo(id: number) {
+    this.loading = true;
+    this.error = null;
+    try {
+      const toggledTodo = await api.toggleTodo(id);
+      runInAction(() => {
+        const index = this.todos.findIndex((t) => t.id == id);
+        if (index !== -1) {
+          this.todos[index] = toggledTodo;
+        } else {
+          this.error = 'Task not found';
+        }
+      });
+    } catch {
+      this.error = 'Error toggling task';
+    } finally {
+      runInAction(() => (this.loading = false));
     }
   }
 
