@@ -10,13 +10,17 @@ POST {{Host}}/api/todos
 Content-Type: application/json; charset=utf-8
 
 {
-    "id": 4,
+    "id": 1,
     "title": "Test",
     "done": false
 }
 
 ###
 
-PATCH {{Host}}/api/todos/1/toggle
+PATCH {{Host}}/api/todos/5/toggle
+
+###
+
+DELETE {{Host}}/api/todos/5
 
 ###

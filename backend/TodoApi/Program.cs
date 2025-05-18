@@ -39,4 +39,14 @@ app.MapPatch("/api/todos/{id:int}/toggle", (int id) =>
     return Results.Ok(todo);
 });
 
+app.MapDelete("/api/todos/{id:int}", (int id) =>
+{
+    var todo = todos.FirstOrDefault(t => t.Id == id);
+    if (todo is null)
+        return Results.NotFound();
+
+    todos.Remove(todo);
+    return Results.NoContent();
+});
+
 app.Run();
