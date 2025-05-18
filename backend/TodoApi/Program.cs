@@ -35,7 +35,6 @@ var todos = new List<Todo>
 
 app.MapGet("/api/todos", async () =>
 {
-    throw new Exception("Test EXCEPTION");
     await Task.Delay(1500);
     return todos;
 });
