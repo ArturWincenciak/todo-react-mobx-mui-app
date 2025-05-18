@@ -33,17 +33,23 @@ var todos = new List<Todo>
     new() { Id = 3, Title = "Buy bread", Done = false }
 };
 
-app.MapGet("/api/todos", () => todos);
-
-app.MapPost("/api/todos", ([FromBody] Todo newTodo) =>
+app.MapGet("/api/todos", async () =>
 {
+    await Task.Delay(1500);
+    return todos;
+});
+
+app.MapPost("/api/todos", async ([FromBody] Todo newTodo) =>
+{
+    await Task.Delay(1500);
     newTodo.Id = todos.Any() ? todos.Max(t => t.Id) + 1 : 1;
     todos.Add(newTodo);
     return Results.Ok(newTodo);
 });
 
-app.MapPatch("/api/todos/{id:int}/toggle", (int id) =>
+app.MapPatch("/api/todos/{id:int}/toggle", async (int id) =>
 {
+    await Task.Delay(1500);
     var todo = todos.FirstOrDefault(t => t.Id == id);
     if (todo is null)
         return Results.NotFound();
@@ -52,8 +58,9 @@ app.MapPatch("/api/todos/{id:int}/toggle", (int id) =>
     return Results.Ok(todo);
 });
 
-app.MapDelete("/api/todos/{id:int}", (int id) =>
+app.MapDelete("/api/todos/{id:int}", async (int id) =>
 {
+    await Task.Delay(1500);
     var todo = todos.FirstOrDefault(t => t.Id == id);
     if (todo is null)
         return Results.NotFound();
