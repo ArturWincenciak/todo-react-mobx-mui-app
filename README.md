@@ -1,12 +1,14 @@
 # Interaktywny tutorial, z którym możesz rozmawiać
-## Zamiast czytać blogpost, który tylko częściowo odpowiada na Twoje potrzeby i wprowadza Cię w dziesiątki problemów, których nie musisz teraz rozwiązywać — stwórz swój własny tutorial, z którym możesz rozmawiać i dyskutować o podejmowanych decyzjach.
-### TODO App z React 18 + TypeScript + MobX + MUI 5 + Axios
 
-**Projekt ten powstał dla backend developera z .NET, w wyniku rozmowy z ChatGPT.**
+> ## Zamiast czytać blogpost, który tylko częściowo odpowiada na Twoje potrzeby i wprowadza Cię w dziesiątki problemów, których nie musisz teraz rozwiązywać — stwórz swój własny tutorial, z którym możesz rozmawiać i dyskutować o podejmowanych decyzjach.
+
+# App z React 18 + TypeScript + MobX + MUI 5 + Axios
+
+**Projekt powstał jako kurs frontendu dla backend developera, stworzony w trakcie rozmowy z ChatGPT.**
 
 To, co tutaj widzicie, to **totalne streszczenie i skrócenie dwóch dni intensywnych rozmów z ChatGPT.**
 
-Na początku poprosiłem go, aby **od zupełnych podstaw** wytłumaczył mi, jak zacząć pracę z frontendem.
+Na początku poprosiłem go, żeby od zupełnych podstaw wytłumaczył mi, jak zacząć pracę z frontendem. Celem tego tekstu w README nie jest pokazanie efektu końcowego — bo taki każdy może sobie sam zbudować. Chodzi raczej o zaszczepienie pomysłu i podzielenie się sposobem, w jaki można uczyć się nowych rzeczy — czyli przez generowanie tutoriala na żywo, skrojonego idealnie pod Twoje potrzeby i poziom.
 
 ---
 
