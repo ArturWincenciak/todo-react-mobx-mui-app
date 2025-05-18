@@ -2,6 +2,7 @@ import './App.css';
 import { observer } from 'mobx-react-lite';
 import { Box, Container, Typography } from '@mui/material';
 import AddTodoFrom from "./components/AddTodoFrom.tsx";
+import TodoList from "./components/TodoList.tsx";
 
 const App = observer(() => {
   return (
@@ -11,6 +12,7 @@ const App = observer(() => {
           TO-DO List
         </Typography>
         <AddTodoFrom />
+        <TodoList />
       </Box>
     </Container>
   );
