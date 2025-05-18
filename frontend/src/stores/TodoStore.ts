@@ -61,7 +61,7 @@ export class TodoStore {
     this.error = null;
     try {
       await api.deleteTodo(id);
-      runInAction(() => this.todos.filter((t) => t.id !== id));
+      runInAction(() => (this.todos = this.todos.filter((t) => t.id !== id)));
     } catch {
       runInAction(() => (this.error = 'Error removing task'));
     } finally {

@@ -1,8 +1,9 @@
 import './App.css';
 import { observer } from 'mobx-react-lite';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, CircularProgress, Container, Typography } from '@mui/material';
 import AddTodoFrom from './components/AddTodoFrom.tsx';
 import TodoList from './components/TodoList.tsx';
+import { todoStore } from './stores/TodoStore.ts';
 
 const App = observer(() => {
   return (
@@ -12,7 +13,7 @@ const App = observer(() => {
           TO-DO List
         </Typography>
         <AddTodoFrom />
-        <TodoList />
+        {todoStore.loading ? <CircularProgress sx={{ mt: 2 }} /> : <TodoList />}
       </Box>
     </Container>
   );
