@@ -28,3 +28,7 @@ export const toggleTodo = async (id: number) => {
   const response = await API.patch<TodoDto>(`/${id}/toggle`);
   return response.data;
 };
+
+export const deleteTodo = async (id: number) => {
+  await API.delete(`/${id}`);
+};

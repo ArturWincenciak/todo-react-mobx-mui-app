@@ -5,7 +5,6 @@ export class TodoStore {
   todos: api.TodoDto[] = [];
   loading = false;
   error: string | null = null;
-  nextId = 1;
 
   constructor() {
     makeAutoObservable(this);
@@ -51,14 +50,23 @@ export class TodoStore {
         }
       });
     } catch {
-      this.error = 'Error toggling task';
+      runInAction(() => (this.error = 'Error toggling task'));
     } finally {
       runInAction(() => (this.loading = false));
     }
   }
 
-  removeTodo(id: number) {
-    this.todos = this.todos.filter((t) => t.id != id);
+  async removeTodo(id: number) {
+    this.loading = true;
+    this.error = null;
+    try {
+      await api.deleteTodo(id);
+      runInAction(() => this.todos.filter((t) => t.id !== id));
+    } catch {
+      runInAction(() => (this.error = 'Error removing task'));
+    } finally {
+      runInAction(() => (this.loading = false));
+    }
   }
 }
 
